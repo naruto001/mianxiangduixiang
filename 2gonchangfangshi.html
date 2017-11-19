@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8"/>
+		<title>工厂方式（即面向对象里的封装函数）</title>
+		<script>
+			window.onload = function () {
+				function createPerson(perName) {
+					var obj = new Object();
+					obj.name = perName;
+					obj.showName = function () {
+						alert( this.name );
+					};
+					return obj;
+				};
+				var p1 = createPerson('dai');
+				p1.showName();
+				var p2 = createPerson('sterveendai');
+				p2.showName();
+
+			}
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

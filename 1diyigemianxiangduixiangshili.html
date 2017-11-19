@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8"/>
+		<title>面向对象第一个程序</title>
+		<script>
+			window.onload = function () {
+				var obj = new Object();  //创建一个空的对象
+				obj.name = 'steven';     //对象的属性
+				obj.showName  = function () {    //对象的方法
+					/*alert( obj.name );*/
+					//面向对象中的this：showName()前面有obj则表示this代表obj，如果没有则表示window
+					alert(this.name);    
+				};
+				obj.showName();
+			}
+		</script>
+	</head>
+	<body>
+	</body>
+</html>
