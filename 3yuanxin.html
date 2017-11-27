@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8"/>
+		<title>原型</title>
+		<script>
+			window.onload = function () {
+				var arr1 = [1,2,3,4,5,6];
+				var arr2 = [3,4,5,6,7,8];
+
+				//原型 写在构造函数Array后面(构造函数：new后面的就是构造函数);
+				Array.prototype.sum = function () {
+					var a = 0;
+					for( var i=0; i<this.length; i++ ) {
+						a += this[i];
+					};
+					return a;
+				};
+				alert( arr1.sum() );
+				alert( arr2.sum() );
+			}
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

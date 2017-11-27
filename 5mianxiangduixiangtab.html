@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8"/>
+		<title>传统的过程式编写选项卡</title>
+		<style>
+			#wrap div {
+				width:200px;
+				height:200px;
+				border:2px solid red;
+				display:none;
+			}
+			.active {
+				background:red;
+			}
+		</style>
+		<script>
+
+			var oDiv = null;
+			var aIpt = null;
+			var aDiv = null;
+
+			window.onload = function () {
+			    oDiv = document.getElementById("wrap");
+				aIpt = oDiv.getElementsByTagName("input");
+				aDiv = oDiv.getElementsByTagName("div");
+
+				init();
+			}
+
+			function init() {
+				for( var i=0; i<aIpt.length; i++ ) {
+					aIpt[i].index = i;
+					aIpt[i].onclick = change;
+				}
+			}
+
+			function change() {
+				for(var i=0; i<aIpt.length; i++) {
+					aIpt[i].className = "";
+					aDiv[i].style.display = "none";
+				}
+				this.className = "active";
+				aDiv[this.index].style.display = "block";
+			}
+		</script>
+	</head>
+	<body>
+		<div id="wrap">
+			<input class="active" type="button" value="1"/>
+			<input type="button" value="2"/>
+			<input type="button" value="3"/>
+			<div style="display:block;">11111</div>
+			<div>22222</div>
+			<div>33333</div>
+		</div>
+	</body>
+</html>
